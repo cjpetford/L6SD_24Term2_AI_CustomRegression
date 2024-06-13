@@ -1,0 +1,61 @@
+import pandas as pd
+
+# Create a DataFrame
+df = pd.DataFrame({
+    'A': [1, 2, 3, 4],
+    'B': [5, 6, 7, 8],
+    'C': [9, 10, 11, 12]
+})
+
+# View first few rows
+print("First few rows of the DataFrame:")
+print(df.head(), "\n")
+
+# View last few rows
+print("Last few rows of the DataFrame:")
+print(df.tail(), "\n")
+
+# Summary of Data
+print("Summary of the DataFrame:")
+print(df.info(), "\n")
+
+# Print the statistical summary of the DataFrame
+print("Statistical summary of the DataFrame:")
+print(df.describe(), "\n")
+
+# Selecting a single column
+print("Selecting column 'A':")
+print(df['A'], "\n")
+
+# Selecting Row by Label
+print("Selecting row with label 1:")
+print(df.loc[1], "\n")
+
+# Selecting Row by Index
+print("Selecting row with index 1:")
+print(df.iloc[1], "\n")
+
+# Filter rows where column A is greater than 2
+print("Filtering rows where column 'A' is greater than 2:")
+filtered_df = df[df['A'] > 2]
+print(filtered_df, "\n")
+
+# Modify column 'A' by multiplying each value by 2
+print("Modifying column 'A' by multiplying each value by 2:")
+df['A'] = df['A'] * 2
+print(df, "\n")
+
+# Add a new column 'D' which is the sum of columns 'A' and 'B'
+print("Adding a new column 'D' which is the sum of columns 'A' and 'B':")
+df['D'] = df['A'] + df['B']
+print(df, "\n")
+
+# Remove Rows with Missing Values
+print("DataFrame after removing rows with missing values:")
+df = df.dropna()
+print(df, "\n")
+
+# Fill missing values with a specific value (e.g., 0)
+print("DataFrame after filling missing values with 0:")
+df = df.fillna(0)
+print(df)
